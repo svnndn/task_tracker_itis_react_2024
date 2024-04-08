@@ -5,7 +5,5 @@ export const FooterWrapper = styled.footer`
   color: rgb(116, 66, 200);
   padding: 10px;
   text-align: center;
-  position: fixed;
-  bottom: 0;
   width: 100%;
 `;
