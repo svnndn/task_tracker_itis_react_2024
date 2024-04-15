@@ -2,6 +2,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import {Modal, Button} from 'react-bootstrap';
 
 const DeleteModal = ({ text, onCancel, onDelete, show }) => {
+
   return (
   <Modal show={show} onHide={onCancel}>
     <Modal.Header closeButton>
