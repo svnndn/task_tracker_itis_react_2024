@@ -4,17 +4,14 @@ import { useState, useContext } from 'react';
 
 import DeleteModal from '../../molecules/DeleteModal';
 
-import { mockProjects } from './mockProjects';
-
 import { Table, TableHead, TableCol, TableColActions } from './styled';
 import NotifierContext from "../../../context/NotifierContext";
 
-const ProjectsTable = () => {
+const ProjectsTable = ( { projects } ) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const { setMessage, setMessageType } = useContext(NotifierContext)
 
   const [projectToDelete, setProjectToDelete] = useState(null);
-  const [mockProjectsState, setMockProjectsState] = useState([...mockProjects]);
 
   const handleOpenModal = (project) => {
     setProjectToDelete(project);
@@ -51,7 +48,7 @@ const ProjectsTable = () => {
         </thead>
 
         <tbody>
-          {mockProjectsState.map(({ id, name, description }) => {
+          {projects.map(({ id, name, description }) => {
             return (
               <tr key={id}>
                 <TableCol>{id}</TableCol>
